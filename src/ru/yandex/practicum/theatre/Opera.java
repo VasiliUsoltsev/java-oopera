@@ -3,7 +3,7 @@ package ru.yandex.practicum.theatre;
 import java.util.ArrayList;
 
 public class Opera extends MusicalShow {
-    private int choirSize;              // Кол-во человек в хоре
+    private final int choirSize;              // Кол-во человек в хоре
 
 
     public Opera(String title, int duration, Director director, ArrayList<Actor> listOfActors, String musicAuthor, String librettoText, int choirSize) {

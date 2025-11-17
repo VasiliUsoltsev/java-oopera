@@ -3,7 +3,7 @@ package ru.yandex.practicum.theatre;
 import java.util.ArrayList;
 
 public class Ballet extends MusicalShow {
-    private String choreographer;           // Хореограф
+    private final String choreographer;           // Хореограф
 
 
     public Ballet(String title, int duration, Director director, ArrayList<Actor> listOfActors, String musicAuthor, String librettoText, String choreographer) {
