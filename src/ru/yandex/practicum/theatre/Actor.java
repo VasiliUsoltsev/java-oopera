@@ -16,7 +16,7 @@ public class Actor extends Person {
 
     @Override
     public String toString() {
-        return  getName() + " " + getSurname() + " (" + height + ")";
+        return  super.toString() + " (" + getHeight() + ")";
     }
 
     @Override
@@ -25,11 +25,11 @@ public class Actor extends Person {
         if (o == null || getClass() != o.getClass()) return false;
 
         Actor actor = (Actor) o;
-        return Objects.equals(getName(), actor.getName()) && Objects.equals(getSurname(), actor.getSurname()) && (height == actor.height);
+        return super.equals(o) && (getHeight() == actor.getHeight());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getName(), getSurname(), getGender(), height);
+        return Objects.hash(super.hashCode(), getHeight());
     }
 }

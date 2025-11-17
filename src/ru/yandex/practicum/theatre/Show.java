@@ -44,13 +44,12 @@ public class Show {
     }
 
     public void addActor(Actor newActor) {
-        for (Actor actor: listOfActors) {
-            if (actor.equals(newActor)) {
-                System.out.println("Ошибка добавления - данный актер уже участвует в спектакле!");
-                return;
-            }
+        if (listOfActors.contains(newActor)) {
+            System.out.println("Ошибка добавления - данный актер уже участвует в спектакле!");
+            return;
+        } else {
+            listOfActors.add(newActor);
         }
-        listOfActors.add(newActor);
     }
 
     public void replaceActor(Actor newActor, String surnameReplaceActor) {

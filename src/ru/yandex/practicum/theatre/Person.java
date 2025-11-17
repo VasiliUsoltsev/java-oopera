@@ -1,5 +1,7 @@
 package ru.yandex.practicum.theatre;
 
+import java.util.Objects;
+
 public class Person {
     private final String name;            // Имя режиссера
     private final String surname;         // Фамилия режиссера
@@ -21,5 +23,24 @@ public class Person {
 
     public Gender getGender() {
         return gender;
+    }
+
+    @Override
+    public String toString() {
+        return getName() + " " + getSurname();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Person person = (Person) o;
+        return Objects.equals(name, person.name) && Objects.equals(surname, person.surname) && gender == person.gender;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, surname, gender);
     }
 }
